@@ -1,23 +1,161 @@
-Pertanyaan Refleksi 
+🚀 AI E-Commerce Chatbot
 
-1. Mengapa Anda memilih tantangan ini? 
-Saya memilih tantangan ini karena menggabungkan tiga aspek yang relevan dengan teknologi modern: e-commerce, integrasi AI, dan fullstack development. Saya ingin menunjukkan kemampuan dalam membangun aplikasi end-to-end menggunakan Next.js dan Supabase, sekaligus mengimplementasikan fitur AI chatbot yang dapat meningkatkan pengalaman pengguna dalam berbelanja. Selain itu, tantangan ini memberikan kesempatan untuk mengerjakan fitur yang realistis dan sering digunakan di produk digital saat ini.
+A modern AI-powered e-commerce application built with Next.js, Supabase, and Gemini AI integration to deliver an interactive shopping experience.
 
-2. Bagian mana yang paling sulit?
-Bagian yang paling sulit adalah integrasi antara AI chatbot dengan backend e-commerce, terutama dalam mengatur alur komunikasi antara frontend, API route di Next.js, dan layanan AI. Selain itu, mengelola environment variable di Supabase dan memastikan semuanya berjalan dengan benar di production (Vercel) juga cukup menantang, terutama terkait error build dan runtime yang tidak langsung terlihat di local environment.
+📦 Tech Stack
+Next.js (App Router)
+Supabase (Auth + Database)
+Tailwind CSS
+Gemini AI API
+Vercel (Deployment)
+🚀 Cara Menjalankan Setelah Deploy
 
-3. Apabila diberikan tambahan waktu satu hari, bagian mana yang akan Anda perbaiki? 
-Jika diberikan tambahan waktu satu hari, saya akan fokus pada:
-a. Meningkatkan kualitas prompt dan konteks AI agar chatbot lebih akurat dalam menjawab pertanyaan produk
-b. Menambahkan caching atau optimasi query Supabase untuk meningkatkan performa
-c. Memperbaiki UI/UX agar lebih interaktif dan responsif, terutama pada bagian chat interface
-d. Menambahkan error handling yang lebih baik di sisi frontend dan API agar lebih stabil
+Aplikasi sudah berhasil di-deploy menggunakan Vercel.
 
-5. Bagaimana cara Anda melakukan scaling terhadap aplikasi ini apabila jumlah pengguna bertambah?
-Untuk scaling aplikasi, saya akan melakukan beberapa pendekatan:
-a. Mengoptimalkan database Supabase dengan indexing yang tepat dan query yang efisien
-b. Menggunakan caching layer (seperti Redis atau edge caching) untuk mengurangi beban database dan API AI
-c. Memisahkan service AI ke background worker atau queue system agar tidak membebani request utama
-d. Menggunakan serverless scaling (Vercel + Supabase) yang otomatis menyesuaikan traffic
-e. Menambahkan rate limiting untuk mencegah abuse pada endpoint chat AI
-f. Monitoring performa dengan logging dan observability tools untuk mendeteksi bottleneck lebih cepat
+🔗 1. Akses aplikasi
+
+👉 https://ai-e-commerce-seven.vercel.app
+
+🔐 2. Login sebagai Admin
+
+Akses halaman admin:
+
+👉 https://ai-e-commerce-seven.vercel.app/admin/login
+
+Login menggunakan akun yang sudah terdaftar di Supabase Auth.
+
+Jika berhasil, akan diarahkan ke:
+
+/admin/dashboard
+🛍️ 3. Flow Penggunaan (User Side)
+1. Browse Produk
+Masuk ke halaman utama
+Melihat daftar produk dari database Supabase
+2. Detail Produk
+Klik produk
+Lihat detail (harga, deskripsi, stok)
+3. AI Chatbot
+User dapat bertanya ke AI
+AI memberikan rekomendasi produk sesuai kebutuhan
+4. Add to Cart
+Klik “Add to Cart”
+Produk masuk ke keranjang
+5. Checkout (jika tersedia)
+Melakukan proses pemesanan
+Data tersimpan ke tabel orders
+🧑‍💻 4. Flow Admin
+
+Setelah login admin, fitur yang tersedia:
+
+➕ Tambah produk
+✏️ Edit produk
+🗑️ Hapus produk
+📦 Lihat order masuk
+📊 Monitoring data (jika tersedia dashboard)
+⚠️ 5. Catatan Penting
+Semua data disimpan di Supabase
+Authentication menggunakan Supabase Auth
+Jika login gagal:
+Pastikan user sudah terdaftar di Supabase
+Cek environment variables di Vercel
+🧠 6. Architecture
+User → Next.js Frontend → API Routes (Next.js) → Supabase
+                                     ↓
+                                Gemini AI API
+🚀 7. Deployment
+Frontend: Vercel
+Backend: Next.js API Routes (Serverless)
+Database: Supabase (PostgreSQL)
+Auth: Supabase Auth
+AI: Gemini API
+✨ Features
+✅ Completed Features
+Product listing (CRUD)
+AI Chatbot product recommendation
+Supabase authentication
+Shopping cart system
+Order management
+Chat history storage
+Responsive UI
+⏳ Future Improvements
+Payment gateway integration (Midtrans / Stripe)
+Advanced recommendation system (ML-based)
+Admin analytics dashboard
+Product search optimization (Elasticsearch)
+Real-time chat streaming improvements
+🤖 AI Tools Used
+Google Gemini API
+Digunakan untuk chatbot dan product recommendation
+Prompt engineering untuk memahami intent user
+Menjaga konteks percakapan
+
+AI diintegrasikan melalui Next.js API Routes (/app/api/chat).
+
+⚖️ Technical Tradeoffs
+1. Supabase vs Custom Backend
+
+Menggunakan Supabase untuk mempercepat development.
+
+Tradeoff:
+
+✔ cepat & scalable
+❌ kontrol backend lebih terbatas
+2. Serverless Deployment (Vercel)
+
+Pros:
+
+Mudah deploy
+Auto scaling
+
+Cons:
+
+Cold start latency
+Tidak cocok untuk proses panjang
+3. External AI API
+
+Pros:
+
+Implementasi cepat
+Hasil AI berkualitas
+
+Cons:
+
+Tergantung API limit & cost
+Latency tergantung network
+4. Simple Recommendation Logic
+
+Menggunakan:
+
+Prompt-based AI
+Basic filtering database
+
+Tradeoff:
+
+✔ cepat dibangun
+❌ tidak sepersonal ML-based system
+📊 Database Schema
+
+Tables:
+
+products
+carts
+cart_items
+orders
+order_items
+chat_history
+profiles
+
+Detail schema tersedia di schema.sql.
+
+👨‍💻 Author
+
+Yesaya Roland Steven
+
+💡 Notes
+
+Project ini dibuat sebagai technical assessment yang berfokus pada:
+
+Fullstack development
+AI integration
+Database design
+Scalable architecture fundamentals
