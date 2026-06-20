@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Pertanyaan Refleksi 
 
-## Getting Started
+1. Mengapa Anda memilih tantangan ini? 
+Saya memilih tantangan ini karena menggabungkan tiga aspek yang relevan dengan teknologi modern: e-commerce, integrasi AI, dan fullstack development. Saya ingin menunjukkan kemampuan dalam membangun aplikasi end-to-end menggunakan Next.js dan Supabase, sekaligus mengimplementasikan fitur AI chatbot yang dapat meningkatkan pengalaman pengguna dalam berbelanja. Selain itu, tantangan ini memberikan kesempatan untuk mengerjakan fitur yang realistis dan sering digunakan di produk digital saat ini.
 
-First, run the development server:
+2. Bagian mana yang paling sulit?
+Bagian yang paling sulit adalah integrasi antara AI chatbot dengan backend e-commerce, terutama dalam mengatur alur komunikasi antara frontend, API route di Next.js, dan layanan AI. Selain itu, mengelola environment variable di Supabase dan memastikan semuanya berjalan dengan benar di production (Vercel) juga cukup menantang, terutama terkait error build dan runtime yang tidak langsung terlihat di local environment.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+3. Apabila diberikan tambahan waktu satu hari, bagian mana yang akan Anda perbaiki? 
+Jika diberikan tambahan waktu satu hari, saya akan fokus pada:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Meningkatkan kualitas prompt dan konteks AI agar chatbot lebih akurat dalam menjawab pertanyaan produk
+Menambahkan caching atau optimasi query Supabase untuk meningkatkan performa
+Memperbaiki UI/UX agar lebih interaktif dan responsif, terutama pada bagian chat interface
+Menambahkan error handling yang lebih baik di sisi frontend dan API agar lebih stabil
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+4. Bagaimana cara Anda melakukan scaling terhadap aplikasi ini apabila jumlah pengguna bertambah?
+Untuk scaling aplikasi, saya akan melakukan beberapa pendekatan:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Mengoptimalkan database Supabase dengan indexing yang tepat dan query yang efisien
+Menggunakan caching layer (seperti Redis atau edge caching) untuk mengurangi beban database dan API AI
+Memisahkan service AI ke background worker atau queue system agar tidak membebani request utama
+Menggunakan serverless scaling (Vercel + Supabase) yang otomatis menyesuaikan traffic
+Menambahkan rate limiting untuk mencegah abuse pada endpoint chat AI
+Monitoring performa dengan logging dan observability tools untuk mendeteksi bottleneck lebih cepat
