@@ -8,18 +8,16 @@ Bagian yang paling sulit adalah integrasi antara AI chatbot dengan backend e-com
 
 3. Apabila diberikan tambahan waktu satu hari, bagian mana yang akan Anda perbaiki? 
 Jika diberikan tambahan waktu satu hari, saya akan fokus pada:
+a. Meningkatkan kualitas prompt dan konteks AI agar chatbot lebih akurat dalam menjawab pertanyaan produk
+b. Menambahkan caching atau optimasi query Supabase untuk meningkatkan performa
+c. Memperbaiki UI/UX agar lebih interaktif dan responsif, terutama pada bagian chat interface
+d. Menambahkan error handling yang lebih baik di sisi frontend dan API agar lebih stabil
 
-Meningkatkan kualitas prompt dan konteks AI agar chatbot lebih akurat dalam menjawab pertanyaan produk
-Menambahkan caching atau optimasi query Supabase untuk meningkatkan performa
-Memperbaiki UI/UX agar lebih interaktif dan responsif, terutama pada bagian chat interface
-Menambahkan error handling yang lebih baik di sisi frontend dan API agar lebih stabil
-
-4. Bagaimana cara Anda melakukan scaling terhadap aplikasi ini apabila jumlah pengguna bertambah?
+5. Bagaimana cara Anda melakukan scaling terhadap aplikasi ini apabila jumlah pengguna bertambah?
 Untuk scaling aplikasi, saya akan melakukan beberapa pendekatan:
-
-Mengoptimalkan database Supabase dengan indexing yang tepat dan query yang efisien
-Menggunakan caching layer (seperti Redis atau edge caching) untuk mengurangi beban database dan API AI
-Memisahkan service AI ke background worker atau queue system agar tidak membebani request utama
-Menggunakan serverless scaling (Vercel + Supabase) yang otomatis menyesuaikan traffic
-Menambahkan rate limiting untuk mencegah abuse pada endpoint chat AI
-Monitoring performa dengan logging dan observability tools untuk mendeteksi bottleneck lebih cepat
+a. Mengoptimalkan database Supabase dengan indexing yang tepat dan query yang efisien
+b. Menggunakan caching layer (seperti Redis atau edge caching) untuk mengurangi beban database dan API AI
+c. Memisahkan service AI ke background worker atau queue system agar tidak membebani request utama
+d. Menggunakan serverless scaling (Vercel + Supabase) yang otomatis menyesuaikan traffic
+e. Menambahkan rate limiting untuk mencegah abuse pada endpoint chat AI
+f. Monitoring performa dengan logging dan observability tools untuk mendeteksi bottleneck lebih cepat
