@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* BASE THEME */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* GLOBAL BODY */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 🔥 FIX untuk html2canvas (SAFE VERSION) */
+html, body {
+  background: #ffffff !important;
+}
+
+/* ❌ HAPUS ini (INI PENYEBAB BUG UI) */
+/* * {
+  color: #000000 !important;
+} */
+
+/* OPTIONAL: hanya untuk invoice area saja */
+.invoice-safe {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* safety fallback */
+@supports not (color: lab(0 0 0)) {
+  body {
+    color: #000000;
+  }
+}
